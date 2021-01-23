@@ -31,7 +31,7 @@ auth.onAuthStateChanged(function(user) {
         } else {
             // doc.data() will be undefined in this case
             db.collection("users").doc(uid).set({uid: uid, name: name, email: email});
-            window.location.href = "https://jacobaxel.github.io/BrownEats/welcome.html"
+            window.location.href = "https://jacobaxel.github.io/GrubCub/welcome.html"
         }
     }).catch(function(error) {
         // console.log("Error getting document:", error);
