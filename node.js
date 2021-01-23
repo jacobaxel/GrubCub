@@ -24,7 +24,7 @@ auth.onAuthStateChanged(function(user) {
         } else {
             // doc.data() will be undefined in this case
             // create user document
-            db.collection("users").doc(uid));
+            db.collection("users").doc(uid).set({});
         }
     }).catch(function(error) {
         // console.log("Error getting document:", error);
