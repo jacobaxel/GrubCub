@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <a href = "https://www.instagram.com/hankschaefer/"> 
+        <img src = "BrownEatsLogo.jpg" class = "center"> 
+    </a>
   </head>
 
   <body>
-    <h1>choose!</h1>
 
-    <form onsubmit="pickUpFood(); return false;">
-      <label for="input">Picking up food</label><br><br>
-      <input type="submit" value="Picking up food button!">
-    </form>
+     <div class = "contained" class = "center">
+        <div class = "title"></div>
+        <form onsubmit="pickUpFood(); return false;">
+            <input type="submit" class = "title" value="PICK UP">
+        </form>
 
-    <br><br>
+        <br><br>
 
-    <form onsubmit="requestDelivery(); return false;">
-      <label for="input">Request delivery</label><br><br>
-      <input type="submit" value="Request delivery button!">
-    </form>
+        <form onsubmit="requestDelivery(); return false;">
+            <input type="submit" class = "title" value="DELIVER">
+        </form>
+     </div>
 
                   <!-- The core Firebase JS SDK is always required and must be listed first -->
               <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
