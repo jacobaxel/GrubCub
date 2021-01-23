@@ -1,9 +1,9 @@
 function pickUpFood(){
-  window.location.href = "https://jacobaxel.github.io/BrownEats/deliverer.html";
+  window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
 }
 
 function requestDelivery(){
-  window.location.href = "https://jacobaxel.github.io/BrownEats/delivery.html";
+  window.location.href = "https://jacobaxel.github.io/GrubCub/delivery.html";
 }
 
 
