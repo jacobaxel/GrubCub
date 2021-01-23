@@ -11,11 +11,14 @@ var auth = firebase.auth();
 var db = firebase.firestore();
 
 var uid;
+var name;
 
 auth.onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     uid = user.uid;
+    name = user.displayName;
+
     // check if user just signed up
     var docRef = db.collection("users").doc(uid);
     docRef.get().then(function(doc) {
@@ -25,7 +28,7 @@ auth.onAuthStateChanged(function(user) {
             // do stuff with user data
         } else {
             // doc.data() will be undefined in this case
-            db.collection("users").doc(uid).set({uid: uid});
+            db.collection("users").doc(uid).set({uid: uid, name: name});
         }
     }).catch(function(error) {
         // console.log("Error getting document:", error);
