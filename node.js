@@ -1,3 +1,12 @@
+function pickUpFood(){
+  window.location.href = "https://jacobaxel.github.io/BrownEats/deliverer.html";
+}
+
+function requestDelivery(){
+  window.location.href = "https://jacobaxel.github.io/BrownEats/choose.html";
+}
+
+
 auth = firebase.auth();
 db = firebase.firestore();
 
