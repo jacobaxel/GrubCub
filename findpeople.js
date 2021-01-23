@@ -4,25 +4,28 @@ function displayUnfulfilled() {
 //   docRef.orderBy("time");
 
   ordersRef.get().then(function(querySnapshot) {
-    var list = document.getElementById("orders");
+    var container = document.getElementById("container");
 
     querySnapshot.forEach(function(doc) {
         var userData = doc.data();
 
-        console.log(userData);
-        console.log(list);
+        console.log(userData["time"]["seconds"]);
+        console.log(container);
 
         var input = document.createElement("INPUT");
         input.setAttribute("type", "checkbox");
-        input.setAttribute("id", userData["id"]);
-        input.setAttribute("name", userData["id"]);
+        input.setAttribute("id", userData["user"]);
+        input.setAttribute("name", userData["user"]);
         input.setAttribute("value", userData["time"]);
 
         var label = document.createElement("Label");
-        label.setAttribute("htmlfor", userData["id"]);
-        label.setAttribute("innerHTML", "Location: ", userData["location"], ", Time: ", userData["time"]);
+        label.setAttribute("for", userData["user"]);
+        var date = new Date(userData["time"]["seconds"]);
+        label.innerHTML = "Location: " + userData["location"] + " | Time: " + date.getFullYear();
+        // label.setAttribute("innerHTML", "Location: ", userData["location"], ", Time: ", userData["time"]);
 
-        list.appendChild(input);
+        container.append(input);
+        container.append(label);
     })
 
     // if (doc.exists) {
