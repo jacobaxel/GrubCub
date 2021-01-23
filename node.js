@@ -3,7 +3,7 @@ function pickUpFood(){
 }
 
 function requestDelivery(){
-  window.location.href = "https://jacobaxel.github.io/BrownEats/choose.html";
+  window.location.href = "https://jacobaxel.github.io/BrownEats/delivery.html";
 }
 
 
