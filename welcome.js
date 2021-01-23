@@ -7,7 +7,7 @@ function submitData(){
   var dorm = $('#dorm').val();
   var phoneNumber = $('#phone').val();
   db.collection("users").doc(uid).set({phone: phoneNumber, dorm: dorm});
-  window.location.href = "https://jacobaxel.github.io/BrownEats/choose.html"
+  window.location.href = "https://jacobaxel.github.io/GrubCub/choose.html"
 }
 
 if (user != null) {
