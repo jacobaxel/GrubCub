@@ -12,12 +12,14 @@ var db = firebase.firestore();
 
 var uid;
 var name;
+var email;
 
 auth.onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     uid = user.uid;
     name = user.displayName;
+    email = user.email;
 
     // check if user just signed up
     var docRef = db.collection("users").doc(uid);
@@ -28,7 +30,8 @@ auth.onAuthStateChanged(function(user) {
             // do stuff with user data
         } else {
             // doc.data() will be undefined in this case
-            db.collection("users").doc(uid).set({uid: uid, name: name});
+            db.collection("users").doc(uid).set({uid: uid, name: name, email: email});
+            window.location.href = "https://jacobaxel.github.io/BrownEats/welcome.html"
         }
     }).catch(function(error) {
         // console.log("Error getting document:", error);
