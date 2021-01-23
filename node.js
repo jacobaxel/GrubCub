@@ -7,8 +7,10 @@ function requestDelivery(){
 }
 
 
-auth = firebase.auth();
-db = firebase.firestore();
+var auth = firebase.auth();
+var db = firebase.firestore();
+
+var uid;
 
 auth.onAuthStateChanged(function(user) {
   if (user) {
