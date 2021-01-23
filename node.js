@@ -25,8 +25,7 @@ auth.onAuthStateChanged(function(user) {
             // do stuff with user data
         } else {
             // doc.data() will be undefined in this case
-            // create user document
-            db.collection("users").doc(uid).set({});
+            db.collection("users").doc(uid).set({uid: uid});
         }
     }).catch(function(error) {
         // console.log("Error getting document:", error);
@@ -34,6 +33,6 @@ auth.onAuthStateChanged(function(user) {
 
   } else {
     // user is not signed in
-//     window.location.href = "";
+    // window.location.href = "https://jacobaxel.github.io/Aux/linkgenerator/login.html";
   }
 });
