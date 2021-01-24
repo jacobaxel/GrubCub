@@ -28,14 +28,14 @@ function displayUnfulfilled() {
 
         var input = document.createElement("INPUT");
         input.setAttribute("type", "checkbox");
-        input.setAttribute("id", userData["user[]"]);
-        input.setAttribute("name", "box");
-        input.setAttribute("value", userData["time"]);
+        input.setAttribute("id", userData["order_number"]);
+        input.setAttribute("name", "name");
+        input.setAttribute("value", userData["pickup_time"]);
 
         var label = document.createElement("Label");
         label.setAttribute("for", userData["user"]);
         // var date = new Date(userData["time"]["seconds"]*1000);
-        label.innerHTML = userData["time"] + " | Deliver To: " + userData["location"];
+        label.innerHTML = userData["pickup_time"] + " | Pickup From: " + userData["dining_hall"] + " | Deliver To: " + userData["dorm"]
         // " " + addZero(date.getHours() % 12) + ":" + addZero(date.getMinutes()) + " | Deliver To: " + userData["location"];
 
         container.append(input);
