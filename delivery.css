@@ -1,19 +1,23 @@
 body {
-	background-color: #F88B13;
-	color: black;
+	background-color: white;
+	color: rgb(78, 44, 5);
 	font-family: monospace;
 }
 
-#boxone {
-	background-color: black;
-	color: white;
+#inputs {
+	background-color: #F88B13;
+	color: rgb(78, 44, 5);
+	font-family: "Monaco";
 	width: 340px;
-	height: 440px;
+	height: 150px;
 	padding: 30px;
-	float: left;
+	float: center;
+	position: relative;
+	top: 100px;
+	left: 350px;
 
-	background-image: url{"Jos.jpg"};
-	background-size: cover;
+	/*background-image: url{"Jos.jpg"};*/
+	/*background-size: cover;*/
 }
 
 #boxtwo {
