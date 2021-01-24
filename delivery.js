@@ -5,7 +5,7 @@ function addData(){
 
     var orderNumber = $('#order_number').val();
     // check that order time is a valid time
-    var orderTime = $('#order_time').val();
+    var pickupTime = $('#pickup_time').val();
     // var diningHall = $('#myselect option:selected').val();
     var name = $('#name').val();
     var phone_number = $('#phone_number').val();
@@ -13,7 +13,7 @@ function addData(){
 
     db.collection("orders").add({
         order_number: orderNumber,
-        order_time: orderTime,
+        pickup_time: pickupTime,
         // dining_hall: diningHall,
         name: name,
         phone_number: phone_number,
