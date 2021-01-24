@@ -1,64 +1,56 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <link rel="stylesheet" href="index.css">
-            <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-            <a href = "https://www.instagram.com/hankschaefer/">
-                <img src = "BrownEatsLogo.png" class = "center">
-            </a>
+  	<html>
+  		<head>
+            <link rel="stylesheet" href="deliverer.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          </head>
-        <body>
+            <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+            <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
 
             <title>BrownEats</title>
           </head>
-
+          
   		<body>
             <h1 id="instructions">
-                Please Select (up to 5) Orders You Would Like To Pick Up
-                <br> <br>
+                Select (up to 3) Orders You Would Like To Deliver
             </h1>
 
-            <form action="deliver_confirmation.html">
-                <div id="container">
+            <form id="answers">
+                <div id="checklist"></div>
+                <br>
 
                 <body onload="displayUnfulfilled(); return false;"></body>
 
-                <br>
-                </div>
-                <br>
-                <submit id="submit">
-                    <input type="submit" value="submit">
-                </submit>
+                <input id="submit" type="submit" value="submit" onclick="return false;"></input>
             </form>
 
-                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
-                <!-- TODO: Add SDKs for Firebase products that you want to use
-                    https://firebase.google.com/docs/web/setup#available-libraries -->
-                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+                https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
 
-                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 
-                <script>
-                    var firebaseConfig = {
-                    apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
-                    authDomain: "browneats-4aed2.firebaseapp.com",
-                    projectId: "browneats-4aed2",
-                    storageBucket: "browneats-4aed2.appspot.com",
-                    messagingSenderId: "75037950124",
-                    appId: "1:75037950124:web:61541e17ffc840159e5f09",
-                    measurementId: "G-DB9TDF7DC9"
-                    };
+            <script>
+                var firebaseConfig = {
+                apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
+                authDomain: "browneats-4aed2.firebaseapp.com",
+                projectId: "browneats-4aed2",
+                storageBucket: "browneats-4aed2.appspot.com",
+                messagingSenderId: "75037950124",
+                appId: "1:75037950124:web:61541e17ffc840159e5f09",
+                measurementId: "G-DB9TDF7DC9"
+                };
+                
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+                var db = firebase.firestore();
+            </script>
 
-                    // Initialize Firebase
-                    firebase.initializeApp(firebaseConfig);
-                    firebase.analytics();
-                    var db = firebase.firestore();
-                </script>
+            <script src="deliverer.js"></script>
 
-                <script src="findpeople.js"></script>
-        </div>
-        </body>
-</html>
+  		</body>
+  	</html>
