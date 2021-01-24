@@ -6,6 +6,10 @@ function requestDelivery(){
   window.location.href = "https://jacobaxel.github.io/GrubCub/delivery.html";
 }
 
+function orderStatus(){
+  window.location.href = "https://jacobaxel.github.io/GrubCub/status.html";
+}
+
 
 // var auth = firebase.auth();
 // var db = firebase.firestore();
