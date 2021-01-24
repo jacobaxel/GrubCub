@@ -18,7 +18,7 @@ function addData(){
         name: name,
         phone_number: phone_number,
         dorm: dorm
-    }
+    };
 
     db.collection("orders").doc($('#order_number').val()).set(docData)
     .then(function(docRef) {
