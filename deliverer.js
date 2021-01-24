@@ -23,8 +23,8 @@ function displayUnfulfilled() {
 
         var userData = doc.data();
 
-        // console.log(userData["time"]["seconds"]);
-        // console.log(container);
+        console.log(userData["time"]["seconds"]);
+        console.log(container);
 
         var input = document.createElement("INPUT");
         input.setAttribute("type", "checkbox");
@@ -39,6 +39,13 @@ function displayUnfulfilled() {
 
         container.append(input);
         container.append(label);
+
+        // var par = document.createElement("p");
+        // par
+        // var textnode = document.createTextNode('<br/>');
+        // container.append(textnode);
+        $('#checklist').append(" ");
+        
     })
     }).catch(function(error) {
         console.log("Error getting document:", error);
@@ -47,7 +54,9 @@ function displayUnfulfilled() {
 
 var btn = document.getElementById("submit");
 
-btn.addEventListener("click", confirmation);
+if(btn) {
+  btn.addEventListener("click", confirmation);
+}
 
 function confirmation() {
   console.log("confirmation clicked");
