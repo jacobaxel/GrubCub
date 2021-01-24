@@ -1,0 +1,33 @@
+body {
+	background-color: white;
+	color: rgb(78, 44, 5);
+	font-family: monospace;
+}
+
+#instructions {
+	text-align: center;
+}
+
+#container {
+	background-color: #F88B13;
+	color: rgb(78, 44, 5);
+	font-family: "Monaco";
+	width: 340px;
+	height: 450px;
+	padding: 20px;
+	/*float: center;*/
+	/*position: relative;*/
+	/*top: 100px;*/
+	/*left: 350px;*/
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#submit {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
