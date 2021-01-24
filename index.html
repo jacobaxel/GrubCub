@@ -1,116 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-    <link rel="stylesheet" href="index.css">
-
-    <a href = "https://www.instagram.com/grubcub401/">
-      <img src = "BrownEatsLogo.png" class = "center">
+    <a href = "https://www.instagram.com/grubcub401/"> 
+        <img src = "BrownEatsLogo.png" class = "center"> 
     </a>
   </head>
 
   <body>
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-         Your app may use that space for branding, controls and other customizations.-->
-    <h1 id=signInMessage></h1>
-    <div id = "logo"></div>
 
-    <!-- TODO: HOME PAGE STUFF BELOW LOGO -->
-    <!-- TODO: MISSION STATEMENT -->
-    <!-- TODO: Bios?? -->
-    <!-- TODO: Check status of order -->
+    <div class = "contained" class = "center">
+        <div class = "title"></div>
+        <form onsubmit="pickUpFood(); return false;">
+            <input type="submit" class = "title" value="pick up for a pal">
+        </form>
 
-    <a href="https://jacobaxel.github.io/GrubCub/choose.html">Continue to GrubCub</a>
+        <br><br>
 
-    <br><br>
+        <form onsubmit="requestDelivery(); return false;">
+            <input type="submit" class = "title" value="summon a snack">
+        </form>
+    </div>
 
-    <!-- <a href="https://jacobaxel.github.io/GrubCub/checkup.html">Check on an order</a> -->
+                  <!-- The core Firebase JS SDK is always required and must be listed first -->
+              <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
 
+              <!-- TODO: Add SDKs for Firebase products that you want to use
+                   https://firebase.google.com/docs/web/setup#available-libraries -->
+              <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
 
+              <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+              <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
 
+              <script>
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                var firebaseConfig = {
+                  apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
+                  authDomain: "browneats-4aed2.firebaseapp.com",
+                  projectId: "browneats-4aed2",
+                  storageBucket: "browneats-4aed2.appspot.com",
+                  messagingSenderId: "75037950124",
+                  appId: "1:75037950124:web:61541e17ffc840159e5f09",
+                  measurementId: "G-DB9TDF7DC9"
+                };
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
+                var db = firebase.firestore();
+              </script>
 
-
-
-
-    <!-- <div id="firebaseui-auth-container"></div> -->
-    <!-- <div id="loader">Loading...</div> -->
-
-
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-             https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-
-
-        <script>
-          // Your web app's Firebase configuration
-          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-          var firebaseConfig = {
-            apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
-            authDomain: "browneats-4aed2.firebaseapp.com",
-            projectId: "browneats-4aed2",
-            storageBucket: "browneats-4aed2.appspot.com",
-            messagingSenderId: "75037950124",
-            appId: "1:75037950124:web:61541e17ffc840159e5f09",
-            measurementId: "G-DB9TDF7DC9"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-          firebase.analytics();
-          var db = firebase.firestore();
-
-          // firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-          //   .then(() => {
-          //     // Existing and future Auth states are now persisted in the current
-          //     // session only. Closing the window would clear any existing state even
-          //     // if a user forgets to sign out.
-          //     // ...
-          //     // New sign-in will be persisted with session persistence.
-          //     return firebase.auth().signInWithEmailAndPassword(email, password);
-          //   })
-          //   .catch((error) => {
-          //     // Handle Errors here.
-          //     var errorCode = error.code;
-          //     var errorMessage = error.message;
-          //   });
-          //
-          // // FirebaseUI config.
-          //   var uiConfig = {
-          //     callbacks: {
-          //       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-          //         // User successfully signed in.
-          //         // Return type determines whether we continue the redirect automatically
-          //         // or whether we leave that to developer to handle.
-          //         return true;
-          //       }
-          //     },
-          //     signInSuccessUrl: 'choose.html',
-          //     signInOptions: [
-          //       // Leave the lines as is for the providers you want to offer your users.
-          //             //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //             //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //             //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //             //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-          //             firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //             //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-          //     ],
-          //     // Terms of service url.
-          //     // tosUrl: 'index.html'
-          //   };
-          //
-          //   // Initialize the FirebaseUI Widget using Firebase.
-          //   var ui = new firebaseui.auth.AuthUI(firebase.auth());
-          //
-          //   // The start method will wait until the DOM is loaded.
-          //   ui.start('#firebaseui-auth-container', uiConfig);
-
-
-           </script>
+    <script src="node.js"></script>
   </body>
+</html>
