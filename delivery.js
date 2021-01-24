@@ -3,18 +3,18 @@ var db = firebase.firestore();
 function addData(){
     // Add a new document with a generated id.
 
-    var orderNumber = $('#order_number').val().parseInt();
+    var orderNumber = $('#order_number').val();
     // check that order time is a valid time
     var orderTime = $('#order_time').val();
-    var diningHall = $('#myselect option:selected').val();
+    // var diningHall = $('#myselect option:selected').val();
     var name = $('#name').val();
-    var phone_number = $('#phone_number').val().parseInt();
+    var phone_number = $('#phone_number').val();
     var dorm = $('#dorm').val();
 
     db.collection("orders").add({
         order_number: orderNumber,
         order_time: orderTime,
-        dining_hall: diningHall,
+        // dining_hall: diningHall,
         name: name,
         phone_number: phone_number,
         dorm: dorm
