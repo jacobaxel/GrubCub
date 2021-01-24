@@ -3,12 +3,7 @@ var submitted = 0;
 var counter = 0;
 
 function displayUnfulfilled() {
-
-  submitted = 0;
-
-  counter = 0;
-
-  var ordersRef = db.collection("orders");
+var ordersRef = db.collection("orders");
 
   var container = document.getElementById("checklist");
 
@@ -61,21 +56,18 @@ function confirmation() {
     submitted = 1;
   }
 
-  if (counter == 0) {
-    alert("No Orders Selected!");
-    counter = 0;
-    submitted = 0;
-    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
-  } else if (counter > 3) {
-    alert("Too Many Orders Selected!");
-    counter = 0;
-    submitted = 0;
-    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
-  }
-
   var ordersRef = db.collection("orders");
 
   let checked = $("#checklist input[type=checkbox]:checked");
+
+  if (checked.length == 0) {
+    alert("No Orders Selected!");
+    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+  } else if (checked.length > 3) {
+    alert("Too Many Orders Selected!");
+    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+  }
+
   var checked_order_numbers = [];
 
   var i;
