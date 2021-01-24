@@ -63,9 +63,13 @@ function confirmation() {
 
   if (counter == 0) {
     alert("No Orders Selected!");
+    counter = 0;
+    submitted = 0;
     window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
   } else if (counter > 3) {
     alert("Too Many Orders Selected!");
+    counter = 0;
+    submitted = 0;
     window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
   }
 
