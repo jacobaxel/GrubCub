@@ -23,7 +23,7 @@ function displayUnfulfilled() {
 
         var userData = doc.data();
 
-        console.log(userData["time"]["seconds"]);
+        console.log(userData["time"]);
         console.log(container);
 
         var input = document.createElement("INPUT");
@@ -34,8 +34,9 @@ function displayUnfulfilled() {
 
         var label = document.createElement("Label");
         label.setAttribute("for", userData["user"]);
-        var date = new Date(userData["time"]["seconds"]*1000);
-        label.innerHTML = " " + addZero(date.getHours() % 12) + ":" + addZero(date.getMinutes()) + " | Deliver To: " + userData["location"] + "\n\n";
+        // var date = new Date(userData["time"]["seconds"]*1000);
+        label.innerHTML = userData["time"] + " | Deliver To: " + userData["location"];
+        // " " + addZero(date.getHours() % 12) + ":" + addZero(date.getMinutes()) + " | Deliver To: " + userData["location"];
 
         container.append(input);
         container.append(label);
@@ -44,7 +45,7 @@ function displayUnfulfilled() {
         // par
         // var textnode = document.createTextNode('<br/>');
         // container.append(textnode);
-        $('#checklist').append(" ");
+        $('#checklist').append("<br>");
         
     })
     }).catch(function(error) {
