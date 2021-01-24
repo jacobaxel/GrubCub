@@ -16,7 +16,25 @@
          Your app may use that space for branding, controls and other customizations.-->
     <h1 id=signInMessage></h1>
     <div id = "logo"></div>
-    <div id="firebaseui-auth-container"></div>
+
+    <!-- TODO: HOME PAGE STUFF BELOW LOGO -->
+    <!-- TODO: MISSION STATEMENT -->
+    <!-- TODO: Bios?? -->
+    <!-- TODO: Check status of order -->
+
+    <a href="https://jacobaxel.github.io/GrubCub/choose.html">Continue to GrubCub</a>
+
+    <br><br>
+
+    <!-- <a href="https://jacobaxel.github.io/GrubCub/checkup.html">Check on an order</a> -->
+
+
+
+
+
+
+
+    <!-- <div id="firebaseui-auth-container"></div> -->
     <!-- <div id="loader">Loading...</div> -->
 
 
@@ -48,50 +66,50 @@
           firebase.analytics();
           var db = firebase.firestore();
 
-          firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(() => {
-              // Existing and future Auth states are now persisted in the current
-              // session only. Closing the window would clear any existing state even
-              // if a user forgets to sign out.
-              // ...
-              // New sign-in will be persisted with session persistence.
-              return firebase.auth().signInWithEmailAndPassword(email, password);
-            })
-            .catch((error) => {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-            });
-
-          // FirebaseUI config.
-            var uiConfig = {
-              callbacks: {
-                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                  // User successfully signed in.
-                  // Return type determines whether we continue the redirect automatically
-                  // or whether we leave that to developer to handle.
-                  return true;
-                }
-              },
-              signInSuccessUrl: 'choose.html',
-              signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                      //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                      //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                      //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                      //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                      firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                      //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-              ],
-              // Terms of service url.
-              // tosUrl: 'index.html'
-            };
-
-            // Initialize the FirebaseUI Widget using Firebase.
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-            // The start method will wait until the DOM is loaded.
-            ui.start('#firebaseui-auth-container', uiConfig);
+          // firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+          //   .then(() => {
+          //     // Existing and future Auth states are now persisted in the current
+          //     // session only. Closing the window would clear any existing state even
+          //     // if a user forgets to sign out.
+          //     // ...
+          //     // New sign-in will be persisted with session persistence.
+          //     return firebase.auth().signInWithEmailAndPassword(email, password);
+          //   })
+          //   .catch((error) => {
+          //     // Handle Errors here.
+          //     var errorCode = error.code;
+          //     var errorMessage = error.message;
+          //   });
+          //
+          // // FirebaseUI config.
+          //   var uiConfig = {
+          //     callbacks: {
+          //       signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+          //         // User successfully signed in.
+          //         // Return type determines whether we continue the redirect automatically
+          //         // or whether we leave that to developer to handle.
+          //         return true;
+          //       }
+          //     },
+          //     signInSuccessUrl: 'choose.html',
+          //     signInOptions: [
+          //       // Leave the lines as is for the providers you want to offer your users.
+          //             //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          //             //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          //             //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          //             //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          //             firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          //             //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+          //     ],
+          //     // Terms of service url.
+          //     // tosUrl: 'index.html'
+          //   };
+          //
+          //   // Initialize the FirebaseUI Widget using Firebase.
+          //   var ui = new firebaseui.auth.AuthUI(firebase.auth());
+          //
+          //   // The start method will wait until the DOM is loaded.
+          //   ui.start('#firebaseui-auth-container', uiConfig);
 
 
            </script>
