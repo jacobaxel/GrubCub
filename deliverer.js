@@ -1,12 +1,16 @@
 var submitted = 0;
 
+var counter = 0;
+
 function displayUnfulfilled() {
+
+  submitted = 0;
+
+  counter = 0;
 
   var ordersRef = db.collection("orders");
 
   var container = document.getElementById("checklist");
-
-  var counter = 0;
 
   ordersRef.get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
@@ -57,6 +61,14 @@ function confirmation() {
     submitted = 1;
   }
 
+  if (counter == 0) {
+    alert("No Orders Selected!");
+    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+  } else if (counter > 3) {
+    alert("Too Many Orders Selected!");
+    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+  }
+
   var ordersRef = db.collection("orders");
 
   let checked = $("#checklist input[type=checkbox]:checked");
@@ -77,7 +89,7 @@ function confirmation() {
     tag.appendChild(text);
     container.appendChild(tag);
 
-    var counter = 1;
+    counter = 1;
 
     var tag = document.createElement("h1");
     var text = document.createTextNode("(Please Contact Recipients About Any Problems)");
