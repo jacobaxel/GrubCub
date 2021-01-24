@@ -21,6 +21,7 @@ function addData(){
     })
     .then(function(docRef) {
         // console.log("Document written with ID: ", docRef.id);
+        alert("Congrats you submitted an order request");
         window.location.href = "https://jacobaxel.github.io/GrubCub/";
     })
     .catch(function(error) {
