@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<link rel="stylesheet" href="delivery.css">
-			<title>My Website</title>
-		</head>
+            <link rel="stylesheet" href="index.css">
+            <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+            <a href = "https://www.instagram.com/hankschaefer/"> 
+                <img src = "BrownEatsLogo.png" class = "center"> 
+            </a>
+          </head>
 		<body>
+
+        <div class = "contained2" class = "center">
 			<h1 id="instructions">
-				<br>
-                Please enter your dining hall, pickup time, and order number below:
+                ENTER INFORMATION FOR PICK UP
             </h1>
 
             <div id="inputs">
                 <!-- action="/action_page.php" -->
-                <form onsubmit="displayUnfulfilled(); return false;">
-                    <label for="dropdown">Location:</label>
+                <form onsubmit="displayTimes();">
+                    <label for="dropdown">Location</label>
                     <select name = "dropdown">
                         <!-- <option value = "Ratty" selected>Ratty</option> -->
                         <option value = "Andrews">Andrews</option>
@@ -22,18 +26,19 @@
                      </select>
                      <br><br>
 
-                     <label for="pickup_time">Pickup Time:</label>
+                     <label for="pickup_time">Pickup Time</label>
                      <input type="time" id="pickup_time" name="pickup_time">
                      <br><br>
 
-                     <label for="order_number">Order Number:</label>
+                     <label for="order_number">Order Number</label>
                      <input type="number" id="order_number" name="order_number">
                      <br><br>
 
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="SUMMON PICK UP">
                 </form>
+            </div>
 
                 <script src="findpeople.js"></script>
-            </div>
+        </div>
 		</body>
 </html>
