@@ -10,34 +10,53 @@
           </head>
         <body>
 
-        <div class = "contained2" class = "center">
+            <title>BrownEats</title>
+          </head>
+
+  		<body>
             <h1 id="instructions">
-                ENTER INFORMATION FOR PICK UP
+                Please Select (up to 5) Orders You Would Like To Pick Up
+                <br> <br>
             </h1>
 
-            <div id="inputs">
-                <!-- action="/action_page.php" -->
-                <form onsubmit="displayTimes();">
-                    <label for="dropdown">Location</label>
-                    <select name = "dropdown">
-                        <!-- <option value = "Ratty" selected>Ratty</option> -->
-                        <option value = "Andrews">Andrews</option>
-                        <!-- <option value = "V-Dub">V-Dub</option> -->
-                        <option value = "Joe's">Joe's</option>
-                     </select>
-                     <br><br>
+            <form action="deliver_confirmation.html">
+                <div id="container">
 
-                     <label for="pickup_time">Pickup Time</label>
-                     <input type="time" id="pickup_time" name="pickup_time">
-                     <br><br>
+                <body onload="displayUnfulfilled(); return false;"></body>
 
-                     <label for="order_number">Order Number</label>
-                     <input type="number" id="order_number" name="order_number">
-                     <br><br>
+                <br>
+                </div>
+                <br>
+                <submit id="submit">
+                    <input type="submit" value="submit">
+                </submit>
+            </form>
 
-                    <input type="submit" value="Request Delivery">
-                </form>
-            </div>
+                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+                <!-- TODO: Add SDKs for Firebase products that you want to use
+                    https://firebase.google.com/docs/web/setup#available-libraries -->
+                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+
+                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+                <script>
+                    var firebaseConfig = {
+                    apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
+                    authDomain: "browneats-4aed2.firebaseapp.com",
+                    projectId: "browneats-4aed2",
+                    storageBucket: "browneats-4aed2.appspot.com",
+                    messagingSenderId: "75037950124",
+                    appId: "1:75037950124:web:61541e17ffc840159e5f09",
+                    measurementId: "G-DB9TDF7DC9"
+                    };
+
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.analytics();
+                    var db = firebase.firestore();
+                </script>
 
                 <script src="findpeople.js"></script>
         </div>
