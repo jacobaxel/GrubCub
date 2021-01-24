@@ -2,11 +2,11 @@ function displayUnfulfilled() {
 
   var ordersRef = db.collection("orders");
 
+  var container = document.getElementById("checklist");
+
+  var counter = 0;
+
   ordersRef.get().then(function(querySnapshot) {
-    var container = document.getElementById("checklist");
-
-    var counter = 0;
-
     querySnapshot.forEach(function(doc) {
 
         // Limits the number of orders displayed to 20
@@ -32,9 +32,17 @@ function displayUnfulfilled() {
         $('#checklist').append("<br>");
         
     })
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-    });
+
+    if (counter == 0) {
+      var tag = document.createElement("p");
+      var text = document.createTextNode("No Orders Available For Pickup");
+      tag.appendChild(text);
+      container.appendChild(tag);
+    }
+
+  }).catch(function(error) {
+      console.log("Error getting document:", error);
+  });
 }
 
 var btn = document.getElementById("submit");
@@ -56,7 +64,18 @@ function confirmation() {
 
   ordersRef.get().then(function(querySnapshot) {
     var container = document.getElementById("answers");
+
+    var tag = document.createElement("h1");
+    var text = document.createTextNode("Please Pickup And Deliver The Meals Below:");
+    tag.appendChild(text);
+    container.appendChild(tag);
+
     var counter = 1;
+
+    var tag = document.createElement("h1");
+    var text = document.createTextNode("(Please Contact Recipients About Any Problems)");
+    tag.appendChild(text);
+    container.appendChild(tag);
 
     querySnapshot.forEach(function(doc) {
 
@@ -78,11 +97,9 @@ function confirmation() {
               console.error("Error removing document: ", error);
           });
         }
-
-        // change picked up field to true;
-        // print message
         
     })
+
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
