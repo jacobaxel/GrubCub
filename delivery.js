@@ -10,7 +10,7 @@ function addData(){
     var name = $('#name').val();
     var phone_number = $('#phone_number').val();
     var dorm = $('#dorm').val();
-    
+
     var docData = {
         order_number: orderNumber,
         pickup_time: pickupTime,
@@ -24,7 +24,7 @@ function addData(){
     .then(function(docRef) {
         // console.log("Document written with ID: ", docRef.id);
         alert("Congrats you submitted an order request");
-        window.location.href = "https://jacobaxel.github.io/GrubCub/";
+        window.location.href = "https://grubcub.tech";
     })
     .catch(function(error) {
         // console.error("Error adding document: ", error);

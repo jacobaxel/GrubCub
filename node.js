@@ -1,13 +1,13 @@
 function pickUpFood(){
-  window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+  window.location.href = "https://grubcub.tech/deliverer.html";
 }
 
 function requestDelivery(){
-  window.location.href = "https://jacobaxel.github.io/GrubCub/delivery.html";
+  window.location.href = "https://grubcub.tech/delivery.html";
 }
 
 function orderStatus(){
-  window.location.href = "https://jacobaxel.github.io/GrubCub/status.html";
+  window.location.href = "https://grubcub.tech/status.html";
 }
 
 

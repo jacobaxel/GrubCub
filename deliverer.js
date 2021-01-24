@@ -31,7 +31,7 @@ var ordersRef = db.collection("orders");
         container.append(label);
 
         $('#checklist').append("<br>");
-        
+
     })
 
     if (counter == 0) {
@@ -62,10 +62,10 @@ function confirmation() {
 
   if (checked.length == 0) {
     alert("No Orders Selected!");
-    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+    window.location.href = "https://grubcub.tech/deliverer.html";
   } else if (checked.length > 3) {
     alert("Too Many Orders Selected!");
-    window.location.href = "https://jacobaxel.github.io/GrubCub/deliverer.html";
+    window.location.href = "https://grubcub.tech/deliverer.html";
   }
 
   var checked_order_numbers = [];
@@ -112,7 +112,7 @@ function confirmation() {
               console.error("Error removing document: ", error);
           });
         }
-        
+
     })
 
     }).catch(function(error) {
