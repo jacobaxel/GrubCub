@@ -20,7 +20,7 @@ function addData(){
         dorm: dorm
     }
 
-    db.collection("orders").doc(order_number).set(docData)
+    db.collection("orders").doc($('#order_number').val()).set(docData)
     .then(function(docRef) {
         // console.log("Document written with ID: ", docRef.id);
         alert("Congrats you submitted an order request");
