@@ -10,15 +10,17 @@ function addData(){
     var name = $('#name').val();
     var phone_number = $('#phone_number').val();
     var dorm = $('#dorm').val();
-
-    db.collection("orders").add({
+    
+    var docData = {
         order_number: orderNumber,
         pickup_time: pickupTime,
         dining_hall: diningHall,
         name: name,
         phone_number: phone_number,
         dorm: dorm
-    })
+    }
+
+    db.collection("orders").doc(order_number).set(docData)
     .then(function(docRef) {
         // console.log("Document written with ID: ", docRef.id);
         alert("Congrats you submitted an order request");
