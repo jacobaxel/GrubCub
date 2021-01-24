@@ -8,8 +8,8 @@
 >>>>>>> 03dd08a2097fc429aa1fc3ee4e27ceb48cdff780
             <link rel="stylesheet" href="index.css">
             <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-            <a href = "https://www.instagram.com/hankschaefer/"> 
-                <img src = "BrownEatsLogo.png" class = "center"> 
+            <a href = "https://www.instagram.com/hankschaefer/">
+                <img src = "BrownEatsLogo.png" class = "center">
             </a>
           </head>
 <<<<<<< HEAD
@@ -28,9 +28,9 @@
 
             <div id="inputs">
                 <!-- action="/action_page.php" -->
-                <form onsubmit="displayTimes();">
+                <form onsubmit="addData(); return false;">
                     <label for="dropdown">Location</label>
-                    <select name = "dropdown">
+                    <select id="myselect" name = "dropdown">
                         <!-- <option value = "Ratty" selected>Ratty</option> -->
                         <option value = "Andrews">Andrews</option>
                         <!-- <option value = "V-Dub">V-Dub</option> -->
@@ -46,11 +46,49 @@
                      <input type="number" id="order_number" name="order_number">
                      <br><br>
 
-                    <input type="submit" value="Request Delivery">
+										 <label for="name">Name</label>
+										 <input type="text" id="name" name="name">
+										 <br><br>
+
+										 <label for="phone_number">Phone Number</label>
+										 <input type="number" id="phone_number" name="phone_number">
+										 <br><br>
+
+										 <label for="dorm">Dorm Building</label>
+										 <input type="text" id="dorm" name="dorm">
+										 <br><br>
+
+                    <input type="submit" value="submit for delivery">
                 </form>
             </div>
 
-                <script src="findpeople.js"></script>
+						<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+						<!-- TODO: Add SDKs for Firebase products that you want to use
+								https://firebase.google.com/docs/web/setup#available-libraries -->
+						<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+
+						<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+						<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+
+						<script>
+								var firebaseConfig = {
+								apiKey: "AIzaSyBp4Hl0KMIK0-_Q5ex6QjbmiBwQar_1aoU",
+								authDomain: "browneats-4aed2.firebaseapp.com",
+								projectId: "browneats-4aed2",
+								storageBucket: "browneats-4aed2.appspot.com",
+								messagingSenderId: "75037950124",
+								appId: "1:75037950124:web:61541e17ffc840159e5f09",
+								measurementId: "G-DB9TDF7DC9"
+								};
+
+								// Initialize Firebase
+								firebase.initializeApp(firebaseConfig);
+								firebase.analytics();
+								var db = firebase.firestore();
+						</script>
+
+                <script src="delivery.js"></script>
         </div>
 <<<<<<< HEAD
         </body>
