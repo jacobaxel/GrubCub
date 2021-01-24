@@ -1,3 +1,5 @@
+var submitted = 0;
+
 function displayUnfulfilled() {
 
   var ordersRef = db.collection("orders");
@@ -49,6 +51,11 @@ var btn = document.getElementById("submit");
 if (btn) { btn.addEventListener("click", confirmation); }
 
 function confirmation() {
+  if (submitted == 1) {
+    return;
+  } else {
+    submitted = 1;
+  }
 
   var ordersRef = db.collection("orders");
 
@@ -60,7 +67,7 @@ function confirmation() {
     checked_order_numbers[i] = checked[i].id;
   }
 
-  console.log(checked_order_numbers);
+  // console.log(checked_order_numbers);
 
   ordersRef.get().then(function(querySnapshot) {
     var container = document.getElementById("answers");
